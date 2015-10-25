@@ -1,0 +1,16 @@
+if [ $1 == 1 ]; then
+rsstail -u https://www.reddit.com/r/nixheads.rss -l -1 | awk 'NR==1,NR==2'
+fi
+if [ $1 == 2 ]; then
+rsstail -u https://www.reddit.com/r/nixheads.rss -l -1 | awk 'NR==3,NR==4'
+fi
+if [ $1 == 3 ]; then
+rsstail -u https://www.reddit.com/r/nixheads.rss -l -1 | awk 'NR==5,NR==6'
+fi
+if [ $1 == 4 ]; then
+rsstail -u https://www.reddit.com/r/nixheads.rss -l -1 | awk 'NR==7,NR==8'
+fi
+if [ $1 == 5 ]; then
+rsstail -u https://www.reddit.com/r/nixheads.rss -l -1 | awk 'NR==9,NR==10'
+fi
+

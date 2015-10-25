@@ -1,0 +1,8 @@
+gameplay() {
+roll(){
+DICE=$( echo $(</dev/urandom tr -dc 1-6 | head -c1) )
+}
+roll
+echo $DICE
+}
+filter 'Play' gameplay

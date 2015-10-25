@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+replies=(
+	"congrats moron im not working"
+	"test reply"
+)
+
+echo ${replies[$((RANDOM % ${#replies[@]}))]}

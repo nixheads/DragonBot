@@ -1,0 +1,2 @@
+IMGIN=$( curl -Ls -o /dev/null -w %{url_effective} http://imgur.com/random | sed s/imgur/i.imgur/g | sed 's/gallery\///g')
+echo "$IMGIN.png"

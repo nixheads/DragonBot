@@ -1,0 +1,32 @@
+
+say_goodbye() { echo "o/"; }
+filter 'cya' say_goodbye
+
+say_tiny() { 
+TINY=$2
+LEN=$(echo ${#TINY})
+DESC=$( wget -qO-  $TINY | hxselect -s '\n' -c  'title' 2>/dev/null )
+if [ $LEN -lt 25 ]; then
+	echo " $DESC"
+else
+	if [[ "$TINY" ==  "http"* ]]; then
+		short_url=$(curl -s http://tinyurl.com/api-create.php?url=$TINY)
+	else
+
+		short_url=$(curl -s http://tinyurl.com/api-create.php?url=http://$TINY)
+	fi
+echo " $short_url $DESC"
+fi
+}
+filter '~tiny ([^ ]+)' say_tiny
+
+
+say_help() {
+echo "Authed users can run ~auth command or ~Command / selecting from the authed list"
+echo "normal users can use take a pick of commands : Say $BOTNICK command "
+echo "ping - get a reply    |   lang  - find out what code lang i have |   rolldice   "
+echo "ranimg - get a random image from imgur |   reddit {number 1 -5}  - to get the last posts"
+echo "Mail useage comands {without $BOTNICK} -  ~mail <user> <msg> | ~checkmail | ~readmail"
+echo "Shorten URLs with  ~tiny <url> "
+}
+filter '~help' say_help

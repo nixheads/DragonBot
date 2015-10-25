@@ -1,0 +1,8 @@
+#!/bin/bash
+curl --connect-timeout 5 "http://www.isup.me/$1" 2>/dev/null | grep -i "is up" >/dev/null
+if [ $? -eq 0 ]; then
+  statustxt="Is Online"
+else
+  statustxt="Is Not Online"
+fi
+echo "$1 $statustxt"

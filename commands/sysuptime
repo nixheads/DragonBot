@@ -1,0 +1,3 @@
+uptime=$( /usr/bin/uptime -p )
+echo $uptime
+
