@@ -17,7 +17,11 @@ filter() {
 }
 run_filters() {
    for f in "${!filters[@]}"; do
-      [[ "$@" =~ $f ]] && { for func in ${filters[$f]}; do; $func "${BASH_REMATCH[@]}" ; done}
+      	[[ "$@" =~ $f ]] && {
+		for func in ${filters[$f]}; do
+		$func "${BASH_REMATCH[@]}"
+		done
+	}
    done
 }
 reload_filters() {
