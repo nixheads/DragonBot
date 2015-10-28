@@ -1,12 +1,12 @@
 filter_keyword()
-{
-   local -A keywords=(
-      [$BOTNICK]="Hello"
-      [bot]="bot ? bot ?  there's bots here ?  .. omg  NSA"
-      [AdrianKoshka]="Oh he sucks"
-   )
+    {
+    local -A keywords=(
+            [$BOTNICK]="Hello"
+            [bot]="bot ? bot ?  there's bots here ?  .. omg  NSA"
+            [AdrianKoshka]="Oh he sucks"
+            )
 
-   [ -n "${keywords[$2]}" ] && echo "${keywords[$2]}"
-}
+        [ -n "${keywords[$2]}" ] && echo "${keywords[$2]}"
+    }
 
 filter '!([^ ]+)' filter_keyword
