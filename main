@@ -2,7 +2,7 @@
 nick="dragonbot"
 server=chat.freenode.net
 port=6667
-chans=( "#nixheads" )
+chans=( "#gentoo-weed" )
 CHANNEL=
 NAME=
 BOTNICK=$nick
